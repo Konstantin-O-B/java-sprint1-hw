@@ -9,13 +9,16 @@ public class StepTracker {
         return sumStep;
     }
 
-    public void MonthsAndDays(int month, int day, int steps) {
+    public void monthsAndDays(int month, int day, int steps) {
         if (month > 11 || day > 29) {
-            System.out.println("Значение некорректно");
+            System.out.println("Значение месяца или дня больше положенного. Введите верное значение");
             return;
-
+        } else if (month < 0 || day < 0 || steps < 0) {
+            System.out.println("Одно из значений отрицательно. Введите верное значение");
+            return;
         }
         monthsAndDays[month][day] = steps;
+        System.out.println("Данные сохранены");
     }
 
     public void printStatForMonth(int month) {

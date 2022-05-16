@@ -28,13 +28,17 @@ public class Main {
                 int day = scanner.nextInt();
                 System.out.println("Введите количество шагов:");
                 int steps = scanner.nextInt();
-                stepTracker.MonthsAndDays(month, day, steps);
-                System.out.println("Данные сохранены");
+                stepTracker.monthsAndDays(month, day, steps);
+
             } else if (command == 2) {
                 System.out.println("Введите номер месяца, где 0 - Январь ... 11 - Декабрь");
                 int month = scanner.nextInt();
+                if (month < 0 || month > 11) {
+                    System.out.println("Неверное значение. Завершение программы");
+                    return;
+                }
+                printStatMenu();
 
-                printMenu2();
                 int command2 = scanner.nextInt();
                 if (command2 == 1) {
                     stepTracker.printStatForMonth(month);
@@ -58,7 +62,10 @@ public class Main {
             } else if (command == 3) {
                 System.out.println("Введите новое значение:");
                 goalNumberSteps = scanner.nextInt();
-                System.out.println("Сохранили:)");
+                if (goalNumberSteps < 0) {
+                    System.out.println("Количество шагов не может быть отрицательным. Введите корректное количество шагов");
+                }
+
             } else if (command == 4) {
                 System.out.println("Выход.");
                 break;
@@ -78,7 +85,7 @@ public class Main {
         System.out.println("4 - Выход");
     }
 
-    public static void printMenu2() {
+    public static void printStatMenu() {
         System.out.println("Выберите одну из функций:");
         System.out.println("1 - Количество пройденных шагов по дням.");
         System.out.println("2 - Общее количество шагов за месяц.");
