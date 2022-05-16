@@ -11,7 +11,7 @@ public class StepTracker {
 
     public void monthsAndDays(int month, int day, int steps) {
         if (month > 11 || day > 29) {
-            System.out.println("Значение месяца или дня больше положенного. Введите верное значение");
+            System.out.println("Значение месяца или дня больше положенного.  Введите верное значение");
             return;
         } else if (month < 0 || day < 0 || steps < 0) {
             System.out.println("Одно из значений отрицательно. Введите верное значение");

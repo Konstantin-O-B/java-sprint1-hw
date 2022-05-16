@@ -51,7 +51,7 @@ public class Main {
                 } else if (command2 == 4) {
                     stepTracker.arrangeStepsForMonth(month);
                 } else if (command2 == 5) {
-                    System.out.println("Пройденная дистанция в километрах: " + converter.allDistance(stepTracker.sumToMonth(month)));
+                    System.out.println("Пройденная дистанция в километрах:  " + converter.allDistance(stepTracker.sumToMonth(month)));
                 } else if (command2 == 6) {
                     System.out.println("Количество сожженных килокалорий: " + converter.allCallories(stepTracker.sumToMonth(month)));
                 } else if (command2 == 7) {
